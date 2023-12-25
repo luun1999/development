@@ -14,6 +14,9 @@
         <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
           <div id="unity-progress-bar-full"></div>
+          <form>
+            <input type="text" placeholder="placeholder"></input>
+          </form>
         </div>
       </div>
       <div id="unity-warning"> </div>
@@ -76,7 +79,7 @@
       // the canvas DOM size and WebGL render target sizes yourself.
       // config.matchWebGLToCanvasSize = false;
 
-      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+      if (true) {
         // Mobile device style: fill the whole browser client area with the game canvas:
 
         var meta = document.createElement('meta');
@@ -100,23 +103,23 @@
 
       loadingBar.style.display = "block";
 
-      var script = document.createElement("script");
-      script.src = loaderUrl;
-      script.onload = () => {
-        createUnityInstance(canvas, config, (progress) => {
-          progressBarFull.style.width = 100 * progress + "%";
-              }).then((unityInstance) => {
-                window.unityInstance = unityInstance;
-                loadingBar.style.display = "none";
-                fullscreenButton.onclick = () => {
-                  unityInstance.SetFullscreen(1);
-                };
-              }).catch((message) => {
-                alert(message);
-              });
-            };
+      // var script = document.createElement("script");
+      // script.src = loaderUrl;
+      // script.onload = () => {
+      //   createUnityInstance(canvas, config, (progress) => {
+      //     progressBarFull.style.width = 100 * progress + "%";
+      //         }).then((unityInstance) => {
+      //           window.unityInstance = unityInstance;
+      //           loadingBar.style.display = "none";
+      //           fullscreenButton.onclick = () => {
+      //             unityInstance.SetFullscreen(1);
+      //           };
+      //         }).catch((message) => {
+      //           alert(message);
+      //         });
+      //       };
 
-      document.body.appendChild(script);
+      // document.body.appendChild(script);
 
     </script>
   </body>
