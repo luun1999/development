@@ -61,8 +61,8 @@
         updateBannerVisibility();
       }
 
-      inputField.addEventListener("focus", () => {
-        window.scrollTo({top: 0});
+      inputField.addEventListener("focusin", (e) => {
+        e.preventDefault();
       });
 
       window.addEventListener("resize", () => {
