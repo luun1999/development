@@ -60,14 +60,7 @@
         }
         updateBannerVisibility();
       }
-
-      inputField.addEventListener("focusin", (e) => {
-        e.preventDefault();
-      });
-
-      window.addEventListener("resize", () => {
-        window.scrollTo({top: 0});
-      })
+      navigator.virtualKeyboard.overlaysContent = true;
 
       var buildUrl = "Build";
       var loaderUrl = buildUrl + "/Build.loader.js";
